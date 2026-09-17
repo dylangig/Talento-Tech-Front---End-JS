@@ -1,0 +1,295 @@
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #0f172a; /* Fondo oscuro moderno, similar al del README */
+}
+
+/* Header & Nav */
+header {
+  background-color: #1e293b;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #f8fafc;
+  text-align: center;
+  padding: 5rem 1rem;
+  border-bottom: 1px solid #334155;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #cbd5e1;
+}
+
+/* Títulos de sección generales */
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #f8fafc;
+}
+
+/* Stack - GRID */
+#stack {
+  padding: 4rem 2rem;
+  background-color: #0f172a;
+}
+
+.grid-habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.habilidad-card {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 5px solid #38bdf8;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  color: #cbd5e1;
+}
+
+.habilidad-card h3 {
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+/* Proyectos - FLEXBOX */
+#proyectos {
+  padding: 4rem 2rem;
+  background-color: #0b1120;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #1e293b;
+  border-radius: 8px;
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #334155;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #334155;
+}
+
+.card h3 {
+  padding: 1rem 1rem 0;
+  color: #f8fafc;
+}
+
+.card p {
+  padding: 0.5rem 1rem 1rem;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.card-links {
+  padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  background: #0f172a;
+  border-top: 1px solid #334155;
+}
+
+.btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+  flex: 1;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+}
+
+.btn-outline:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-disabled {
+  background-color: #475569;
+  color: #94a3b8;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+  flex: 1;
+  cursor: not-allowed;
+}
+
+/* Multimedia */
+#multimedia {
+  background-color: #0f172a;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.video-container {
+  margin-top: 2rem;
+}
+
+.video-container iframe {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Contacto - Formulario */
+#contacto {
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+#contacto p {
+  margin-bottom: 2rem;
+}
+
+#contacto strong {
+  color: #38bdf8;
+}
+
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+}
+
+.form-contacto label {
+  font-weight: bold;
+  color: #f8fafc;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.8rem;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  background-color: #1e293b;
+  color: #f8fafc;
+  font-family: inherit;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+
+.btn-submit {
+  padding: 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #1d4ed8;
+}
+
+/* Footer */
+footer {
+  background-color: #0b1120;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #334155;
+}
+
+/* MEDIA QUERIES (Diseño Responsivo) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
