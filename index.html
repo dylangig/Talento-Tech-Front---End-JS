@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dylan Gigena Diaz - Portafolio</title>
-  <!-- Google Fonts: Roboto -->
+  <title>Dylan Gigena Díaz - Portafolio</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <!-- CSS Externo -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -15,7 +15,7 @@
 
   <!-- HEADER & NAV -->
   <header>
-    <h1>Dylan Gigena Diaz</h1>
+    <div class="logo">Dylan Gigena Díaz<span>.</span></div>
     <nav>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
@@ -27,123 +27,196 @@
   </header>
 
   <main>
-    <!-- SECCIÓN INICIO -->
+    <!-- HERO SECTION -->
     <section id="inicio" class="hero">
-      <h2>Estudiante de 2do año de la Tecnicatura en Programación</h2>
-      <p>Desarrollador enfocado en crear soluciones eficientes utilizando tecnologías modernas tanto en el Frontend como en el Backend y bases de datos.</p>
+      <div class="hero-badge">Tecnicatura en Programación • UNaB</div>
+      <h2>Desarrollador de Software & Frontend</h2>
+      <p>Construyo aplicaciones web modernas, sistemas backend eficientes y soluciones digitales enfocadas en la usabilidad y el rendimiento.</p>
+      <div class="hero-actions">
+        <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+        <a href="#contacto" class="btn btn-secondary">Contactarme</a>
+      </div>
     </section>
 
-    <!-- SECCIÓN STACK (Grid) -->
+    <!-- STACK TECNOLÓGICO (Grid) -->
     <section id="stack">
-      <h2>Stack Tecnológico</h2>
+      <div class="section-header">
+        <h2>Stack Tecnológico</h2>
+        <p>Herramientas y tecnologías que utilizo para llevar ideas a la producción.</p>
+      </div>
       <div class="grid-habilidades">
         <div class="habilidad-card">
+          <div class="card-icon">⚡</div>
           <h3>Frontend</h3>
           <p>React, TypeScript, Tailwind CSS, Vite, HTML5, CSS3, JavaScript.</p>
         </div>
         <div class="habilidad-card">
+          <div class="card-icon">⚙️</div>
           <h3>Backend & Datos</h3>
           <p>Python, FastAPI, Cloudflare Workers, MySQL, SQLite, JSON.</p>
         </div>
         <div class="habilidad-card">
+          <div class="card-icon">🛠️</div>
           <h3>Herramientas</h3>
-          <p>Git, GitHub, Docker, Arquitectura MVC.</p>
+          <p>Git, GitHub, Docker, Arquitectura MVC, VS Code.</p>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN PROYECTOS (Flexbox) -->
+    <!-- PROYECTOS DESTACADOS (Fila por Fila) -->
     <section id="proyectos">
-      <h2>Proyectos Destacados</h2>
-      <div class="cards-container">
+      <div class="section-header">
+        <h2>Proyectos Destacados</h2>
+        <p>Selección de trabajos reales, sistemas en producción y desarrollos académicos.</p>
+      </div>
+
+      <div class="projects-list">
         
-        <!-- Proyecto 1: Melina Diaz Fotografía -->
-        <article class="card">
-          <img src=" img/MelinaDiazFotografia1.png" alt="Melina Diaz Fotografía">
-          <h3>Melina Diaz Fotografía</h3>
-          <p>Portfolio profesional en producción. Desarrollado con React, TypeScript, Tailwind y backend serverless en Cloudflare Workers.</p>
-          <div class="card-links">
-            <a href="https://github.com/dylangig/Melinadiaz_Fotografia" target="_blank" class="btn">GitHub</a>
-            <a href="http://melinadiazfotografia.com.ar" target="_blank" class="btn btn-outline">Ver Web</a>
+        <!-- PROYECTO PRINCIPAL (FEATURED) -->
+        <article class="project-card featured">
+          <div class="project-media">
+            <span class="badge-featured">Proyecto Principal</span>
+            <img src="MelinaDiazFotografia1.png" alt="Melina Diaz Fotografía">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Tailwind</span>
+              <span>Cloudflare Workers</span>
+            </div>
+            <h3>Melina Diaz Fotografía</h3>
+            <p>Portfolio profesional actualmente en producción. Diseñado con una interfaz limpia e inmersiva para exhibición visual, respaldado por una arquitectura serverless que garantiza velocidad y alta disponibilidad.</p>
+            <div class="project-actions">
+              <a href="https://github.com/dylangig/Melinadiaz_Fotografia" target="_blank" class="btn btn-primary">Código GitHub</a>
+              <a href="http://melinadiazfotografia.com.ar" target="_blank" class="btn btn-outline">Ver Sitio en Vivo ↗</a>
+            </div>
           </div>
         </article>
 
-        <!-- Proyecto 2: UniFica -->
-        <article class="card">
-          <img src="https://via.placeholder.com/300x150" alt="UniFica (UNaB)">
-          <h3>UniFica (UNaB)</h3>
-          <p>Sistema de gestión para el Centro de Estudiantes. Trabajé en equipo como Desarrollador Frontend maquetando vistas sobre arquitectura MVC (PHP, MySQL, Docker, Tailwind).</p>
-          <div class="card-links">
-            <span class="btn-disabled">Proyecto Interno</span>
+        <!-- PROYECTO 2: UNIFICA -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="img/unifica.png" alt="UniFica UNaB">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>Frontend</span>
+              <span>MVC</span>
+              <span>Tailwind</span>
+              <span>PHP / MySQL</span>
+            </div>
+            <h3>UniFica (UNaB)</h3>
+            <p>Sistema de gestión integral para el Centro de Estudiantes de la Universidad Nacional Guillermo Brown. Participación en equipo maquetando interfaces sobre arquitectura MVC.</p>
+            <div class="project-actions">
+              <span class="btn-disabled">Proyecto Interno</span>
+            </div>
           </div>
         </article>
 
-        <!-- Proyecto 3: Sistema de Biblioteca -->
-        <article class="card">
-          <img src="https://via.placeholder.com/300x150" alt="Sistema de Biblioteca">
-          <h3>Sistema de Biblioteca</h3>
-          <p>Proyecto académico enfocado en algoritmos y persistencia de datos locales (JSON) utilizando Python.</p>
-          <div class="card-links">
-            <a href="https://github.com/Dasein369/tpi_pa2026_biblioteca" target="_blank" class="btn">GitHub</a>
+        <!-- PROYECTO 3: SUSHI UZUMAKI -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="img/sushi.png" alt="Sushi Uzumaki POS">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>Backend</span>
+              <span>SQLite</span>
+            </div>
+            <h3>Sushi Uzumaki POS</h3>
+            <p>Sistema de punto de venta (POS) y gestión de pedidos para negocio gastronómico, enfocado en el procesamiento ágil de comandas e inventario.</p>
+            <div class="project-actions">
+              <a href="https://github.com/dylangig/Sushi-Uzumaki-POS-FastApi" target="_blank" class="btn btn-primary">Código GitHub</a>
+            </div>
           </div>
         </article>
 
-        <!-- Proyecto 4: Sushi Uzumaki -->
-        <article class="card">
-          <img src="https://via.placeholder.com/300x150" alt="Sushi Uzumaki POS">
-          <h3>Sushi Uzumaki POS</h3>
-          <p>Sistema de punto de venta (POS) y gestión de pedidos desarrollado con el framework FastAPI.</p>
-          <div class="card-links">
-            <a href="https://github.com/dylangig/Sushi-Uzumaki-POS-FastApi" target="_blank" class="btn">GitHub</a>
+        <!-- PROYECTO 4: SISTEMA DE BIBLIOTECA -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="img/biblioteca.png" alt="Sistema de Biblioteca">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>Python</span>
+              <span>JSON Persistence</span>
+              <span>POO</span>
+            </div>
+            <h3>Sistema de Gestión de Biblioteca</h3>
+            <p>Proyecto académico de software enfocado en algoritmos de búsqueda, estructuras de datos y persistencia local mediante archivos JSON.</p>
+            <div class="project-actions">
+              <a href="https://github.com/Dasein369/tpi_pa2026_biblioteca" target="_blank" class="btn btn-primary">Código GitHub</a>
+            </div>
           </div>
         </article>
-        
-        <!-- Proyecto 5: Nextplay -->
-        <article class="card">
-          <img src="https://via.placeholder.com/300x150" alt="Nextplay Recomendaciones">
-          <h3>Nextplay Recomendaciones</h3>
-          <p>Sistema de recomendación de videojuegos (En desarrollo).</p>
-          <div class="card-links">
-            <a href="https://github.com/dylangig/Nextplay-recomendaciones" target="_blank" class="btn">GitHub</a>
+
+        <!-- PROYECTO 5: NEXTPLAY -->
+        <article class="project-card">
+          <div class="project-media">
+            <img src="img/nextplay.png" alt="Nextplay Recomendaciones">
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Machine Learning / Logic</span>
+              <span>En Desarrollo</span>
+            </div>
+            <h3>Nextplay - Recomendador de Videojuegos</h3>
+            <p>Plataforma en desarrollo orientada a la sugerencia personalizada de videojuegos según preferencias de usuario y análisis de atributos.</p>
+            <div class="project-actions">
+              <a href="https://github.com/dylangig/Nextplay-recomendaciones" target="_blank" class="btn btn-primary">Código GitHub</a>
+            </div>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- SECCIÓN MULTIMEDIA -->
+    <!-- MULTIMEDIA -->
     <section id="multimedia">
-      <h2>Presentación de Código</h2>
-      <p>Demostración práctica de desarrollo y herramientas de versionado.</p>
-      <div class="video-container">
-        <!-- Reemplazar con el link de YouTube correspondiente si es necesario -->
+      <div class="section-header">
+        <h2>Presentación de Código</h2>
+        <p>Demostración práctica de flujo de trabajo y herramientas de versionado.</p>
+      </div>
+      <div class="video-wrapper">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/8NDXEKP2jD8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO -->
+    <!-- CONTACTO -->
     <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Puedes escribirme directamente a <strong>Dylangigenadiaz@gmail.com</strong> o utilizar el siguiente formulario:</p>
-      <!-- Reemplaza 'TU_FORM_ID' por tu código de Formspree -->
-      <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="form-contacto">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+      <div class="contact-card">
+        <h2>¿Tenés un proyecto en mente?</h2>
+        <p>Escribime directamente a <strong>Dylangigenadiaz@gmail.com</strong> o enviame un mensaje desde este formulario.</p>
+        
+        <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="form-contacto">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre o empresa" required>
+          </div>
 
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required>
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+          </div>
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué te puedo ayudar?" required></textarea>
+          </div>
 
-        <button type="submit" class="btn-submit">Enviar Mensaje</button>
-      </form>
+          <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje ✨</button>
+        </form>
+      </div>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 Dylan Gigena Diaz. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Dylan Gigena Díaz. Diseñado para Pre-Entrega Web.</p>
   </footer>
 
 </body>
