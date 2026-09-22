@@ -286,7 +286,19 @@ section {
   height: auto;
   display: block;
   object-fit: cover;
+  object-position: center; /* Nunca deforma: recorta desde el centro */
   transition: transform 0.3s ease;
+}
+
+/* Cards chicas: mismo ratio de aspecto para que no queden de distintas alturas */
+.projects-list .project-card:not(.featured):not(.secondary-featured) .project-media {
+  aspect-ratio: 16 / 9;
+}
+
+.projects-list .project-card:not(.featured):not(.secondary-featured) .project-media img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .project-card:hover .project-media img {
@@ -373,6 +385,7 @@ section {
   .project-card.featured .project-media img {
     height: 100%;
     object-fit: cover;
+    object-position: center;
   }
 
   /* DESTACADO SECUNDARIO (UniFica): ancho total, layout horizontal
@@ -397,6 +410,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -630,6 +644,49 @@ section {
   }
 }
 
+/* ============================================================
+   FADE-IN SUTIL (bloques estructurales grandes)
+   Solo se aplica si animations.js agrega .js-fade, y nunca si
+   el sistema pide reducir el movimiento (ver media query abajo).
+   ============================================================ */
+.js-fade {
+  opacity: 0;
+  transform: translateY(14px); /* movimiento sutil */
+  transition:
+    opacity 0.45s ease-out,    /* velocidad ágil */
+    transform 0.45s ease-out;
+  will-change: opacity, transform;
+}
+
+.js-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accesibilidad: desactivar TODA animación si el usuario
+   tiene configurado el sistema para minimizar movimientos */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-fade {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* RESEÑAS (GRID) */
 #resenas {
   max-width: 1100px;
@@ -637,7 +694,9 @@ section {
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* 2 columnas fijas en desktop (2×2 con 4 reseñas): sin hueco asimétrico.
+     1 columna en pantallas angostas. */
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 1.5rem;
 }
 
