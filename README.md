@@ -16,6 +16,7 @@ Mostrar mi perfil como desarrollador de software y frontend, mis proyectos reale
 | Productos y Proyectos | Cards de proyectos | **Flexbox** responsivo (`flex-wrap`) |
 | Reseñas | Testimonios | **CSS Grid** (`auto-fit / minmax`) |
 | Multimedia | Video de YouTube integrado | `iframe` |
+| Productos | **Galería con lightbox** por proyecto (clic en la imagen) | JavaScript vanilla (`js/gallery.js`) |
 | Contacto | Formulario con Formspree | **Media Queries** (2 columnas en desktop, 1 en móvil) |
 | Footer | Navegación + copyright | Degradado `background` |
 
@@ -29,6 +30,7 @@ Mostrar mi perfil como desarrollador de software y frontend, mis proyectos reale
 - ✅ Diseño responsivo con **Flexbox** (sección Productos) y **Grid** (sección Reseñas).
 - ✅ Sección Contacto adaptable mediante **Media Queries**.
 - ✅ Contenido multimedia: imágenes locales e `iframe` de YouTube.
+- ✅ Galería interactiva por proyecto (lightbox con flechas, teclado, miniaturas y swipe táctil).
 - ✅ Lista de navegación desordenada con enlaces internos.
 - ✅ Repositorio público en GitHub + sitio publicado en GitHub Pages.
 
@@ -39,7 +41,9 @@ Mostrar mi perfil como desarrollador de software y frontend, mis proyectos reale
 ├── index.html          # Página principal (HTML semántico)
 ├── css/
 │   └── styles.css      # Estilos externos
-├── img/                # Imágenes de proyectos
+├── js/
+│   └── gallery.js      # Lightbox / galería por proyecto
+├── img/                # Imágenes de proyectos y galerías
 └── README.md
 ```
 
