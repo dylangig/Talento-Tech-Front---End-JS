@@ -238,11 +238,19 @@ section {
   font-size: 0.95rem;
 }
 
-/* PROYECTOS (FILAS VERTICALES / ROW BY ROW) */
+/* PRODUCTOS (CARDS RESPONSIVAS CON FLEXBOX) */
 .projects-list {
   display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.projects-list .project-card {
+  flex: 1 1 320px;
+}
+
+.projects-list .project-card.featured {
+  flex: 1 1 100%;
 }
 
 .project-card {
@@ -362,6 +370,81 @@ section {
   }
 }
 
+/* RESEÑAS (GRID) */
+#resenas {
+  max-width: 1100px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-cyan);
+}
+
+.review-stars {
+  color: #fbbf24;
+  letter-spacing: 3px;
+  font-size: 1rem;
+}
+
+.review-card blockquote {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-style: italic;
+  border: none;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: auto;
+  /* Resetea estilos heredados si algún reset global aplica */
+  border: none;
+  padding: 0;
+}
+
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: #fff;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-author strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.review-author small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
 /* MULTIMEDIA */
 #multimedia {
   text-align: center;
@@ -374,11 +457,6 @@ section {
   overflow: hidden;
   border: 1px solid var(--border-color);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  display: block;
 }
 
 /* CONTACTO */
@@ -407,6 +485,13 @@ section {
   flex-direction: column;
   gap: 1.2rem;
   text-align: left;
+}
+
+/* En móvil los campos van uno debajo del otro */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .form-group {
@@ -447,24 +532,117 @@ section {
   margin-top: 0.5rem;
 }
 
-/* FOOTER */
-footer {
+/* Aspect ratio responsivo del video (iframe) */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* FOOTER PRINCIPAL (selector acotado: no aplica a los footer dentro de cards) */
+body > footer {
   border-top: 1px solid var(--border-color);
   text-align: center;
   padding: 2rem;
   color: var(--text-muted);
   font-size: 0.9rem;
   margin-top: 4rem;
+  /* Propiedad background: degradado sutil */
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.6) 0%, rgba(10, 15, 29, 1) 100%);
 }
 
-/* RESPONSIVE NAV */
+.footer-nav {
+  margin-bottom: 0.8rem;
+}
+
+.footer-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--accent-cyan);
+}
+
+/* RESPONSIVE NAV & GENERAL */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     gap: 1rem;
   }
 
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
   .hero h2 {
     font-size: 2.2rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.7rem;
+  }
+
+  /* CONTACTO RESPONSIVO */
+  #contacto {
+    padding: 3rem 1rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.2rem;
+    border-radius: var(--radius-md);
+  }
+
+  .contact-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem 0.9rem;
+    font-size: 1rem; /* Evita zoom automático en iOS al enfocar */
+  }
+}
+
+/* CONTACTO EN PANTALLAS MEDIANAS/GRANDES: campos en 2 columnas */
+@media (min-width: 769px) {
+  .form-contacto .form-row {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .form-contacto .form-row .form-group {
+    flex: 1;
+  }
+
+  .contact-card {
+    padding: 3.5rem 3rem;
+  }
+}
+
+/* TABLET: 2 cards de producto por fila */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects-list .project-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .projects-list .project-card.featured {
+    flex: 1 1 100%;
+  }
+
+  section {
+    padding: 3rem 1.5rem;
   }
 }
